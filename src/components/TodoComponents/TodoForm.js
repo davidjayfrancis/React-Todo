@@ -4,20 +4,25 @@ class TodoForm extends React.Component {
   constructor() {
     super();
     this.state = {
-        itemName: ''
+      itemName: ""
     };
   }
 
-  const handleChange = () => {
-      //do something
-  }
+  handleChange = () => {
+    return;
+  };
 
   render() {
-      <input type="text" 
-        onChange={this.handleChange} 
-        name="item" 
-        value={this.state.itemName}
+    return (
+      <form>
+        <input
+          type="text"
+          onChange={this.handleChange}
+          name="item"
+          //   value={this.state.itemName}
         />
+      </form>
+    );
   }
 }
 
