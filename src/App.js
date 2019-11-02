@@ -30,13 +30,35 @@ class App extends React.Component {
     });
   };
 
+  toggleFinished = todoId => {
+    console.log("Finished: ", todoId);
+
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === todoId) {
+          return {
+            ...todo,
+            finished: !todo.finished
+          };
+        }
+        return todo;
+      })
+    });
+  };
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm addItem={this.addItem} />
         {this.state.todos.map(todo => {
-          return <Todo todo={todo.todo} />;
+          return (
+            <Todo
+              key={todo.id}
+              todo={todo}
+              toggleFinished={this.toggleFinished}
+            />
+          );
         })}
         {}
       </div>
