@@ -8,7 +8,7 @@ class Todo extends React.Component {
 
   render() {
     console.log("rendering form...");
-    return <p>HELLO FROM Todo.js!{this.props.message}</p>;
+    return <p>HELLO FROM Todo.js!{this.props.todo}</p>;
   }
 }
 
