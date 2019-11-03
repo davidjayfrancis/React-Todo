@@ -23,8 +23,8 @@ class Todo extends React.Component {
     }
 
     return (
-      <div className="todo-box" onClick={this.handleClick}>
-        <p className={verboseClassName}>{this.props.todo.todo}</p>
+      <div className={verboseClassName} onClick={this.handleClick}>
+        <p>{this.props.todo.todo}</p>
       </div>
     );
   }

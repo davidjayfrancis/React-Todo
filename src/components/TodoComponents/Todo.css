@@ -1,0 +1,41 @@
+body {
+  background: lightskyblue;
+}
+
+.App {
+  text-align: center;
+  max-width: 665px;
+  margin: 0 auto;
+}
+
+.todo-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  width: 45%;
+  background: pink;
+  border-radius: 5px;
+  margin: 5px 0;
+  text-align: left;
+  padding-left: 8px;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.todo.finished {
+  background-color: rgb(255, 150, 160);
+  text-decoration: line-through;
+  color: darkgrey;
+}
+
+.clr-button {
+  margin-top: 20px;
+}

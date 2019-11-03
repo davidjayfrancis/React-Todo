@@ -4,15 +4,29 @@ import React from "react";
 import Todo from "./Todo.js";
 
 class TodoList extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      // list of objects
-      todos: []
-    };
+  constructor(props) {
+    super(props);
   }
 
   render() {
-    return <div>heyyy</div>;
+    return (
+      <div className="todo-list">
+        {this.props.todos.map(todo => {
+          return (
+            <Todo
+              key={todo.id}
+              todo={todo}
+              toggleFinished={this.props.toggleFinished}
+            />
+          );
+        })}
+
+        <button className="clr-button" onClick={this.props.clearFinished}>
+          Clear todos
+        </button>
+      </div>
+    );
   }
 }
+
+export default TodoList;

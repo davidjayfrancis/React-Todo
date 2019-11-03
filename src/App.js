@@ -2,6 +2,7 @@ import React from "react";
 import Todo from "./components/TodoComponents/Todo.js";
 import TodoForm from "./components/TodoComponents/TodoForm.js";
 import TodoList from "./components/TodoComponents/TodoList.js";
+import "./components/TodoComponents/Todo.css";
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -18,6 +19,9 @@ class App extends React.Component {
 
   addItem = itemName => {
     console.log("Adding item: ", itemName);
+    if (itemName.length === 0) {
+      return;
+    }
     this.setState({
       todos: [
         ...this.state.todos,
@@ -27,6 +31,15 @@ class App extends React.Component {
           finished: false
         }
       ]
+    });
+  };
+
+  clearFinished = () => {
+    console.log("Clear button clicked!");
+    this.setState({
+      todos: this.state.todos.filter(todo => {
+        return todo.finished === false;
+      })
     });
   };
 
@@ -48,19 +61,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
+      <div className="App">
+        <h2>Welcome to David's Magical Todo App!</h2>
         <TodoForm addItem={this.addItem} />
-        {this.state.todos.map(todo => {
-          return (
-            <Todo
-              key={todo.id}
-              todo={todo}
-              toggleFinished={this.toggleFinished}
-            />
-          );
-        })}
-        {}
+        <TodoList
+          toggleFinished={this.toggleFinished}
+          clearFinished={this.clearFinished}
+          todos={this.state.todos}
+        />
       </div>
     );
   }
