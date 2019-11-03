@@ -13,7 +13,13 @@ class App extends React.Component {
     super();
     this.state = {
       // list of objects
-      todos: []
+      todos: [
+        {
+          id: Date.now(),
+          todo: "Add some todos!",
+          finished: false
+        }
+      ]
     };
   }
 

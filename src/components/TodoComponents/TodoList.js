@@ -20,7 +20,6 @@ class TodoList extends React.Component {
             />
           );
         })}
-
         <button className="clr-button" onClick={this.props.clearFinished}>
           Clear todos
         </button>
