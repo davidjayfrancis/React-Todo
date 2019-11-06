@@ -1,0 +1,66 @@
+body {
+  background: lightskyblue;
+}
+
+.App {
+  text-align: center;
+  max-width: 665px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.form input {
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  background-color: lightgoldenrodyellow;
+  border: none;
+  border-bottom: 3px solid rgba(20, 30, 255, 0.5);
+}
+
+.todo-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 45%;
+  background: rgb(255, 255, 220);
+  border-radius: 2px;
+  margin: 5px 0;
+  text-align: left;
+  padding-left: 8px;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.todo.finished {
+  background-color: rgb(255, 210, 215);
+  text-decoration: line-through;
+  color: darkgrey;
+}
+
+.clr-button {
+  margin-top: 20px;
+}
+
+button {
+  background-color: rgb(100, 120, 255);
+  color: white;
+  width: 25%;
+  border-radius: 3px;
+  border-top: none;
+  font-size: 1.6rem;
+}
