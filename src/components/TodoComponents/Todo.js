@@ -1,33 +1,24 @@
 import React from "react";
 
-class Todo extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const Todo = props => {
+  const handleClick = e => {
+    console.log("You clicked '" + props.todo.todo + "'. " + e.target.className);
 
-  handleClick = e => {
-    console.log(
-      "You clicked '" + this.props.todo.todo + "'. " + e.target.className
-    );
-
-    this.props.toggleFinished(this.props.todo.id);
+    props.toggleFinished(props.todo.id);
   };
 
-  render() {
-    console.log("rendering form...");
+  console.log("rendering form...");
 
-    let verboseClassName = "todo";
-    if (this.props.todo.finished) {
-      verboseClassName += " finished";
-    }
-
-    return (
-      <div className={verboseClassName} onClick={this.handleClick}>
-        <p>{this.props.todo.todo}</p>
-      </div>
-    );
+  let verboseClassName = "todo";
+  if (props.todo.finished) {
+    verboseClassName += " finished";
   }
-}
+
+  return (
+    <div className={verboseClassName} onClick={handleClick}>
+      <p>{props.todo.todo}</p>
+    </div>
+  );
+};
 
 export default Todo;
